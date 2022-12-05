@@ -1,12 +1,12 @@
 ###########################################################
 #   Description: Compile OpenWrt by GitHub Actions        #
 #   Based on: https://github.com/P3TERX/Actions-OpenWrt   #
-#   Author: Hyy2001X                                      #
+#   Author: Hung Nguyen                                   #
 ###########################################################
 
 name: Xiaomi Mi Router R3G Gen 1
 
-### 以下内容请保持不变 ( 请修改下方的 [环境变量设置] )
+### Please keep the following content unchanged (please modify the [environment variable settings] below)
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -20,7 +20,7 @@ on:
       Tempoary_FLAG:
         description: 'Firmware label [optional]'
         default: ''
-### 控制部分结束 ( 以上内容请保持不变 )
+### The control section is over (please keep the above content unchanged)
 
   #push:
   #  branches: 
@@ -32,23 +32,23 @@ on:
   #watch:
   #  types: [started]
 
-### 环境变量设置
+### Environment variable settings
 env:
-# 编译时调用的 [.config] 文件名称
+# [.config] file name called at compile time
   CONFIG_FILE: xiaomi_mi-router-3g
-# 源码仓库:分支
-  DEFAULT_SOURCE: GenzPN-Company-Limited/lede:master
-# 上传固件到 Github Releases
+# Source repository: branch
+  DEFAULT_SOURCE: coolsnowwolf/lede:master
+# Upload to Github Releases
   UPLOAD_RELEASES: true
-# 上传固件到 Github Artifacts
+# Upload to Github Artifacts
   UPLOAD_ARTIFACTS: false
-# 上传 bin 文件夹到 Github Artifacts
+# Upload the bin folder to Github Artifacts
   UPLOAD_BIN_ARTIFACTS: false
-# 删除无用文件以增加编译空间
+# Delete useless files to increase compilation space
   DELETE_USELESS_FILES: true
-# 删除早期的 workflow 任务
-  DELETE_OLD_WORKFLOW: false
-### 结束
+# Delete earlier workflow tasks
+  DELETE_OLD_WORKFLOW: true
+### Finish
 
 jobs:
   Compile:
